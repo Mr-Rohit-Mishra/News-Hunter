@@ -5,12 +5,9 @@ export default class News extends Component {
   render() {
     return (
       <>
-      this is news
-      <NewsItem/>
-      <NewsItem/>
-      <NewsItem/>
-      <NewsItem/>
-      <NewsItem/>
+      <h2 className="d-flex justify-content-center my-5">DAILY NEWS</h2>
+      <NewsItem title="newtitle" description="newdescription"/>
+      
       </>
     )
   }
