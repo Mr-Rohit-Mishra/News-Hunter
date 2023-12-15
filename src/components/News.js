@@ -1277,14 +1277,14 @@ export default class News extends Component {
   }
 
   async componentDidMount(){
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1014d987f9a5419ca103aef96084cf44&page=1&pageSize=20`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1014d987f9a5419ca103aef96084cf44&page=1&pageSize=${this.props.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json()
     this.setState({articles:parsedData.articles, totalResults: parsedData.totalResults})
   }
 
   handlePrevClick = async()=>{
-    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1014d987f9a5419ca103aef96084cf44&pageSize=20&page=${this.state.page -1}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1014d987f9a5419ca103aef96084cf44&pageSize=${this.props.pageSize}&page=${this.state.page -1}`;
     let data = await fetch(url);
     let parsedData = await data.json()
     console.log("prev")
@@ -1297,11 +1297,11 @@ export default class News extends Component {
   }
 
   handleNextClick = async()=>{
-    if (this.state.page +1 >Math.ceil(this.state.totalResults/20)){
+    if (this.state.page +1 >Math.ceil(this.state.totalResults/this.props.pageSize)){
 
     }
     else{
-      let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1014d987f9a5419ca103aef96084cf44&pageSize=20&page=${this.state.page +1}`;
+      let url = `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=1014d987f9a5419ca103aef96084cf44&pageSize=${this.props.pageSize}&page=${this.state.page +1}`;
       let data = await fetch(url);
       let parsedData = await data.json()
       console.log("next")
@@ -1327,7 +1327,7 @@ export default class News extends Component {
       
       <div className="pagination d-flex justify-content-between my-5 mx-5">
         <button disabled={this.state.page<=1} type="button" className="btn btn-success" onClick={this.handlePrevClick}>&larr; Previous</button>
-        <button type="button" className="btn btn-success" onClick={this.handleNextClick}>Next &rarr;</button>
+        <button disabled={(this.state.page +1 >Math.ceil(this.state.totalResults/this.props.pageSize))} type="button" className="btn btn-success" onClick={this.handleNextClick}>Next &rarr;</button>
       </div>
       
       </>
