@@ -11,8 +11,12 @@ export default class NewsItem extends Component {
                 <img src={imgUrl} className="img-fluid rounded-start" alt="..."/>
               </div>
               <div className="col-md-8">
+                  
+                  
                   <div className="card-body">
-                    <span className="position-absolute   translate-middle badge rounded-pill bg-danger" style={{bottom:'0%', left:'90%', height: '10%'}}>Source:{source}</span>
+                    <div className="d-flex justify-content-center position-absolute"style={{padding:'0.5rem',right:'0',bottom:'0'}}>
+                      <span className="badge bg-danger" style={{borderRadius:'0'}} >Source:{source}</span>                
+                    </div>
                     <h5 className="card-title">{title}</h5>
                     <p className="card-text">{description}</p>
                     <div className="d-flex justify-content-between">
