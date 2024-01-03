@@ -9,12 +9,8 @@ import LoadingBar from 'react-top-loading-bar';
 
 export default function App (props) {
 
-  const [progress, setProgress] = useState(0)
-  
-
-  const Progress=()=>{
-    setProgress({progress:progress})
-  }
+    const [progress, setProgress] = useState(0)
+    
   
     return (
       <>

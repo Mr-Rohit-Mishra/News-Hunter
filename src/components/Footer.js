@@ -8,7 +8,7 @@ export default function Footer() {
           <footer className="py-5" >
               <div className="row">
                   <div className="col-6 col-md-2 mb-3">
-                    <h5>CRICKET</h5>
+                    <h5>Buisness</h5>
                     <ul className="nav flex-column">
                       <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">India vs Australia </a></li>
                       <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">India vs Australia </a></li>
@@ -28,7 +28,7 @@ export default function Footer() {
                     </ul>
                   </div>
                   <div className="col-6 col-md-2 mb-3">
-                    <h5>LIFESTYLE</h5>
+                    <h5>HEALTH</h5>
                     <ul className="nav flex-column">
                       <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Art and Culture </a></li>
                       <li className="nav-item mb-2"><a href="/" className="nav-link p-0 text-body-secondary">Brunch Fashion Festivals</a></li>
